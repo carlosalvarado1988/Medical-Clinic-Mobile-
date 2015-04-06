@@ -1,0 +1,113 @@
+	<script type="text/javascript">
+		$(document).bind("mobileinit", function () {
+			$.mobile.ajaxEnabled = false;
+		});
+	</script>
+
+<div data-role="page" class="ui-responsive-panel">
+
+    <div data-role="header" data-theme="d">
+        <h1>CLINICA EMPRESARIAL</h1>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <a href="#add-form" data-icon="plus" data-iconpos="notext">Add</a>
+    </div><!-- /header -->
+
+
+
+    <div data-role="panel" data-inset="false" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel" data-theme="a">
+        <ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li data-icon="delete" style="background-color:#111;">
+                <a href="#" data-rel="close">Cerrar menu</a>			
+            </li>
+
+            <li data-icon="home">
+                <a href="../main.php" >Inicio</a>			
+            </li>
+        </ul>
+
+
+
+
+        <h3>Control de Pacientes</h3>
+        <ul data-role="listview" data-theme="a" data-inset="false" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li><a href="/Paciente/consulPaciente.php">Pacientes</a></li>
+            <li><a href="/Paciente/consulDatosMedicos.php">Registro Clinico</a></li>
+            <li><a href="/Paciente/consulHistoMedico.php">Historial Clinico</a></li>
+        </ul>
+
+
+        <h3>Control de Citas</h3>
+        <ul data-role="listview" data-theme="a" data-inset="false" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li><a href="/Cita/consulCita.php">Registro de Citas</a></li>
+        </ul>
+
+
+
+        <h3>Control de Examenes de Laboratorio</h3>
+        <ul data-role="listview" data-theme="a" data-inset="false" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li><a href="/ExaLab/consulExaLabo.php">Registro de examenes</a></li>
+        </ul>
+		
+		<h3>Control de Recetas</h3>
+        <ul data-role="listview" data-theme="a" data-inset="false" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li><a href="/ControlMed/consulMedicamento.php">Registro de receta</a></li>
+        </ul>
+
+
+
+        <h3>Mantenimiento</h3>
+        <ul data-role="listview" data-theme="a" data-inset="false" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+            <li><a href="/Depart/MostraDep.php">Departamento</a></li>
+            <li><a href="/Munic/mostrarMunic.php">Municipio</a></li>
+            <li><a href="/LugTraba/MostraLugTrab.php">Dependencia</a></li>
+            <li><a href="/Enfermedades/mostraManEnfer.php">Registro de enfermedades</a></li>
+            <li><a href="/EstCivil/mostraManEstCivil.php">Registro Estado Civil</a></li>
+            <li><a href="/Pais/mostraManPais.php">Registro de Pais</a></li>
+            <li><a href="/TipSangre/MostraTipSan.php">Tipo de Sangre</a></li>
+			<li><a href="/Usuario/mostraUsuario.php">Usuarios</a></li>
+        </ul>
+
+
+
+    </div><!-- /panel -->	
+
+    <div data-role="panel" data-position="right" data-position-fixed="false" data-display="overlay" id="add-form" data-theme="b">
+
+        <form class="userform">
+            <h2>Create new user</h2>
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+
+            <label for="email">Email</label>
+            <input type="email" name="email" id="status" value="" data-clear-btn="true" data-mini="true">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+
+            <div class="switch">
+                <label for="status">Status</label>
+                <select name="status" id="slider" data-role="slider" data-mini="true">
+                    <option value="off">Inactive</option>
+                    <option value="on">Active</option>
+                </select>
+            </div>
+
+            <div class="ui-grid-a">
+                <div class="ui-block-a"><a href="#" data-rel="close" data-role="button" data-theme="c" data-mini="true">Cancel</a></div>
+                <div class="ui-block-b"><a href="#" data-rel="close" data-role="button" data-theme="b" data-mini="true">Save</a></div>
+            </div>
+        </form>
+
+        <!-- panel content goes here -->
+    </div><!-- /panel -->
+
+
+    <div class="jqm-footer" data-role="footer" data-position="fixed">
+        <h4>
+            <?php
+
+            bienvenida();
+            ?>
+        </h4>
+    </div><!-- /jqm-footer -->
+
